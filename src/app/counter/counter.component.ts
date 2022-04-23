@@ -7,6 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CounterComponent implements OnInit {
 
+  value = 123
+
+increment() { 
+  this.value++;
+}
+decrement(){
+  this.value--;
+}
+
+
   constructor() { }
 
   ngOnInit(): void {
