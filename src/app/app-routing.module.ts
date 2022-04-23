@@ -1,7 +1,24 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
+import { CounterComponent } from './counter/counter.component';
+import { TodoComponent } from './todos/todo/todo.component';
+import { TodosComponent } from './todos/todos.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+{
+path: "counter",
+component: CounterComponent,
+},
+{path: 'todos',
+component: TodosComponent,
+},
+{
+   path:'',
+  redirectTo: '',
+  pathMatch: 'full',
+}
+
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
