@@ -9,11 +9,23 @@ import {Todo} from './model/todo';
 export class TodosComponent implements OnInit {
 
   public todos: Todo[] = [];
-  public text: string = '.....';
-  public clear() {
-    this.text = "clear"
+  public text: string = '';
+  public addTodo() {
+    const todo: Todo = {
+      text: this.text,
+      created: Date.now(),
+      done: false, 
+      priority: Math.ceil(Math.random() * 3),
+    }
+    this.todos.push(todo);
+    this.clear();
   }
-
+  public clear() {
+    this.text = ""
+  }
+public setDone(todo: Todo) {
+  todo.done = true
+}
   constructor() { }
 
   ngOnInit(): void {
