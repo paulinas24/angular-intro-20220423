@@ -17,7 +17,8 @@
 
 <ol>
 <li *ngFor="let todo of todos">
-   <span [ngClass]="{done: todo.done}">
+   <span [ngClass]="{done: todo.done}"
+   >
        <input type="checkbox" [(ngModel)]="todo.done"/>
        {{ todo.text }}
     </span> 

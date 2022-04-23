@@ -26,6 +26,9 @@ export class TodosComponent implements OnInit {
 public setDone(todo: Todo) {
   todo.done = true
 }
+
+public style = {
+}
   constructor() { }
 
   ngOnInit(): void {
