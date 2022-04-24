@@ -4,6 +4,7 @@ import { CounterComponent } from './counter/counter.component';
 import { TimerComponent } from './timer/timer.component';
 import { TodoComponent } from './todos/todo/todo.component';
 import { TodosComponent } from './todos/todos.component';
+import { UsersComponent } from './users/users.component';
 
 const routes: Routes = [
 {
@@ -16,6 +17,10 @@ component: TodosComponent,
 {
   path: 'timer',
   component: TimerComponent,
+},
+{
+  path: 'users',
+  component: UsersComponent
 },
 {
    path:'**',

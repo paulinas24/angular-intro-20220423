@@ -7,10 +7,12 @@ import { TodosComponent } from './todos/todos.component';
 import { FormsModule } from '@angular/forms';
 import { TodoComponent } from './todos/todo/todo.component';
 import { TimerComponent } from './timer/timer.component';
+import { UsersComponent } from './users/users.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
-  declarations: [AppComponent, CounterComponent, TodosComponent, TodoComponent, TimerComponent],
-  imports: [BrowserModule, AppRoutingModule, FormsModule],
+  declarations: [AppComponent, CounterComponent, TodosComponent, TodoComponent, TimerComponent, UsersComponent],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
 })
