@@ -32,6 +32,12 @@ this.storageService.saveTodos(this.todos);
 
 }
 
+public removeAll(): void {
+  this.todos = [];
+  this.storageService.saveTodos(this.todos);
+
+}
+
 public style = {
 }
   constructor(private storageService : StorageService) {}
