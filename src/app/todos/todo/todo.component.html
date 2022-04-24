@@ -3,7 +3,7 @@
       [(ngModel)]="todoInput.done"
       type="checkbox"
     />
-    {{ todoInput.text }}
+    {{ todoInput.text | uppercase }}
 
     <span> {{todoInput.created | date: "short" }} </span>
 <button (click)="onDeleteClick()">&cross;</button>
