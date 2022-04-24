@@ -1,37 +1,21 @@
-<!-- <p>todos works!</p> -->
-<!-- <h1> this is todos component !</h1> -->
-
 <div *ngIf="!text">
-    type the todo below..
-</div>
-
-<input [(ngModel)]="text"
-(keyup.enter)="addTodo()"
-/>
-<button (click)="addTodo()">add </button>
-<button (click)="clear()"> clear </button>
-
-<div *ngIf="todos.length === 0">
-    this list is empty 
-</div>
-
-<ol>
-<li *ngFor="let todo of todos">
-   <span [ngClass]="{done: todo.done}"
-   >
-       <input type="checkbox" [(ngModel)]="todo.done"/>
-       {{ todo.text }}
-    </span> 
-  <!-- <span> {{ todo.created }}</span>  -->
-<span class="priority">
-    <span [ngSwitch]="todo.priority">
-        <span *ngSwitchCase="1"> high</span>
-        <span *ngSwitchCase="2"> medium</span>
-        <span *ngSwitchCase="3"> low</span>
-
-    </span>
-priority
-<button (click)="setDone(todo)">&check;</button>
-</span>
-</li>
-</ol>
+    Type the todo below…
+  </div>
+  
+  <input
+    [(ngModel)]="text"
+    (keyup.enter)="addTodo()"
+  />
+  
+  <button (click)="addTodo()">add</button>
+  <button (click)="clear()">clear</button>
+  
+  <ng-container *ngIf="todos.length === 0"
+    >The list is empty</ng-container
+  >
+  
+  <div *ngFor="let todoItem of todos"> <!--  -->
+    <app-todo [todoInput]="todoItem"
+        (delete)="deleteTodo($event)"
+    ></app-todo>
+  </div>

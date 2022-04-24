@@ -1,15 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit, EventEmitter, Output}from '@angular/core';
+import {Todo} from '../model/todo';
 
 @Component({
   selector: 'app-todo',
   templateUrl: './todo.component.html',
-  styleUrls: ['./todo.component.scss']
+  styleUrls: ['./todo.component.scss'],
 })
 export class TodoComponent implements OnInit {
+  @Input() public todoInput: Todo;
+  @Output() public delete = new EventEmitter<Todo>();
 
-  constructor() { }
+public onDeleteClick() {
+  this.delete.emit(this.todoInput); 
+}
+  constructor() {}
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

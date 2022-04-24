@@ -1,1 +1,11 @@
-<p> to do works </p>
+<div [ngClass]="{done: todoInput.done}">
+    <input
+      [(ngModel)]="todoInput.done"
+      type="checkbox"
+    />
+    {{ todoInput.text }}
+
+    <span> {{todoInput.created | date: "short" }} </span>
+<button (click)="onDeleteClick()">&cross;</button>
+
+  </div>
